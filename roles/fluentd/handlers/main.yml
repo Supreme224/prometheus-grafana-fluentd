@@ -1,0 +1,16 @@
+- name: reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+  listen: reload systemd
+
+- name: restart fluentd
+  ansible.builtin.systemd:
+    name: fluentd
+    state: restarted
+  listen: restart fluentd
+
+- name: restart docker
+  ansible.builtin.systemd:
+    name: docker
+    state: restarted
+  listen: restart docker

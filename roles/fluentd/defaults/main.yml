@@ -1,0 +1,3 @@
+fluentd_output_file: /var/log/test/fluentd
+docker_logs_path: /var/lib/docker/containers
+fluentd_version: '1.18.0'

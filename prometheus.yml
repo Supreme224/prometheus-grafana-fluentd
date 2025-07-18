@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s  # Интервал сбора метрик (по умолчанию 15 секунд)
+  evaluation_interval: 15s  # Интервал оценки правил алертов
+
+scrape_configs:
+  - job_name: 'prometheus'  # Мониторинг самого Prometheus
+    static_configs:
+      - targets: ['172.17.0.1:9090']
+
+  - job_name: 'fluentd'
+    static_configs:
+      - targets: ['172.17.0.1:24225']  # Укажите IP и порт Fluentd
+    metrics_path: /metrics

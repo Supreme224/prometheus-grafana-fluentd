@@ -1,0 +1,12 @@
+- name: Deploy Fluentd and Monitoring Stack
+  hosts: localhost
+  become: yes
+
+  roles:
+    - fluentd
+
+  tasks:
+    - name: Start Prometheus and Grafana via Docker Compose
+      ansible.builtin.command:
+        cmd: docker-compose up -d
+      changed_when: false
